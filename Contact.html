@@ -108,6 +108,76 @@
         overflow-wrap: anywhere;
       }
 
+      .contact-form {
+        display: grid;
+        gap: 18px;
+        margin: 36px 0 24px;
+        padding-top: 28px;
+        border-top: 1px solid var(--line);
+      }
+
+      .contact-form h2 {
+        margin: 0;
+        font-size: 1.5rem;
+      }
+
+      .form-field {
+        display: grid;
+        gap: 8px;
+      }
+
+      .form-field label {
+        font-weight: 700;
+      }
+
+      .form-field input,
+      .form-field textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--text);
+        font: inherit;
+      }
+
+      .form-field textarea {
+        min-height: 140px;
+        resize: vertical;
+      }
+
+      .form-field input:focus-visible,
+      .form-field textarea:focus-visible,
+      .submit-button:focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 3px;
+      }
+
+      .form-note {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      .submit-button {
+        min-height: 48px;
+        padding: 0 22px;
+        justify-self: start;
+        border: 0;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        color: #07111d;
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+
+      .submit-button:hover {
+        transform: translateY(-1px);
+      }
+
       .back-link {
         display: inline-flex;
         padding: 10px 0;
@@ -157,7 +227,48 @@
         </a>
       </nav>
 
+      <form class="contact-form" id="contact-form">
+        <h2>Send me a message</h2>
+        <div class="form-field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required />
+        </div>
+        <div class="form-field">
+          <label for="email">Your email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required />
+        </div>
+        <div class="form-field">
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text" required />
+        </div>
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <p class="form-note" id="form-note">
+          Submitting opens your default email app with the message ready to send.
+        </p>
+        <button class="submit-button" type="submit" aria-describedby="form-note">Prepare email</button>
+      </form>
+
       <a class="back-link" href="Home.html">← Back to homepage</a>
     </main>
+    <script>
+      document.getElementById("contact-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(event.currentTarget);
+        const subject = formData.get("subject").trim();
+        const body = [
+          `Name: ${formData.get("name").trim()}`,
+          `Email: ${formData.get("email").trim()}`,
+          "",
+          formData.get("message").trim(),
+        ].join("\n");
+        const mailtoUrl = `mailto:nainnawaziri@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        window.location.href = mailtoUrl;
+      });
+    </script>
   </body>
 </html>

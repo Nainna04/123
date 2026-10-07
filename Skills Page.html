@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Professional Skills & Achievements</title>
+
+  <style>
+    :root {
+      color-scheme: light dark;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f3f6fb;
+      color: #152238;
+    }
+
+    .app {
+      min-height: 100vh;
+      background-color: light-dark(#f3f6fb, #0b1220);
+      color: light-dark(#152238, #e9eef7);
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      padding: 72px 7vw 56px;
+      background: linear-gradient(
+        135deg,
+        #0b1f3a 0%,
+        #123c66 58%,
+        #176b73 100%
+      );
+      color: #fff;
+    }
+
+    .hero-inner {
+      max-width: 1120px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.4fr 0.6fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 12px;
+      font-weight: 800;
+      opacity: 0.75;
+    }
+
+    h1 {
+      margin: 12px 0 16px;
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.65;
+      color: #d8e7f5;
+    }
+
+    .hero-card {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 22px;
+      padding: 24px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-card strong {
+      display: block;
+      font-size: 34px;
+      margin-bottom: 4px;
+    }
+
+    .hero-card span {
+      color: #cfe2f2;
+      font-size: 14px;
+    }
+
+    /* =========================
+       MAIN CONTAINER
+    ========================== */
+
+    .container {
+      max-width: 1120px;
+      margin: auto;
+      padding: 52px 7vw 80px;
+    }
+
+    .section {
+      margin-bottom: 56px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: 28px;
+      letter-spacing: -0.025em;
+    }
+
+    .section-intro {
+      margin: 8px 0 0;
+      color: light-dark(#607089, #aebbd0);
+      line-height: 1.55;
+    }
+
+    /* =========================
+       CARDS
+    ========================== */
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: light-dark(#fff, #111b2c);
+      border: 1px solid light-dark(#dce4ee, #26364d);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(15, 36, 63, 0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 35px rgba(15, 36, 63, 0.12);
+    }
+
+    .card .tag {
+      display: inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: light-dark(#eaf3f6, #17343b);
+      color: light-dark(#17606a, #82d1d2);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .card h3 {
+      margin: 16px 0 8px;
+      font-size: 19px;
+    }
+
+    .card p {
+      margin: 0;
+      color: light-dark(#64748b, #aebbd0);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .card .date {
+      margin-top: 16px;
+      font-size: 12px;
+      color: light-dark(#8a98ab, #8493aa);
+      font-weight: 700;
+    }
+
+    /* =========================
+       WORK EXPERIENCE TIMELINE
+    ========================== */
+
+    .timeline {
+      border-left: 2px solid light-dark(#d9e4ef, #26364d);
+      margin-left: 8px;
+    }
+
+    .job {
+      position: relative;
+      padding: 0 0 28px 30px;
+    }
+
+    .job:last-child {
+      padding-bottom: 0;
+    }
+
+    .job:before {
+      content: "";
+      position: absolute;
+      left: -7px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #1b7f86;
+      box-shadow: 0 0 0 5px light-dark(#f3f6fb, #0b1220);
+    }
+
+    .job h3 {
+      margin: 0 0 5px;
+      font-size: 20px;
+    }
+
+    .job .meta {
+      color: #1b7f86;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .job ul {
+      margin: 0;
+      padding-left: 18px;
+      color: light-dark(#5f6e83, #aebbd0);
+      line-height: 1.65;
+    }
+
+    /* =========================
+       SKILLS
+    ========================== */
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .skill {
+      padding: 15px 16px;
+      border-radius: 14px;
+      background: light-dark(#fff, #111b2c);
+      border: 1px solid light-dark(#dce4ee, #26364d);
+      font-weight: 750;
+      font-size: 14px;
+      transition: transform 0.2s ease;
+    }
+
+    .skill:hover {
+      transform: translateY(-3px);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    .footer {
+      padding: 28px 7vw;
+      border-top: 1px solid light-dark(#dce4ee, #26364d);
+      color: light-dark(#718096, #95a4bb);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    /* =========================
+       RESPONSIVE DESIGN
+    ========================== */
+
+    @media (max-width: 800px) {
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        padding-top: 52px;
+      }
+    }
+
+    @media (max-width: 460px) {
+
+      .skills {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        padding-top: 40px;
+      }
+
+      .hero {
+        padding-left: 5vw;
+        padding-right: 5vw;
+      }
+
+      .container {
+        padding-left: 5vw;
+        padding-right: 5vw;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="app">
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+    <header class="hero">
+
+      <div class="hero-inner">
+
+        <div>
+
+          <div class="eyebrow">
+            Professional Profile
+          </div>
+
+          <h1>
+            Skills, Qualifications & Experience
+          </h1>
+
+          <p>
+            A concise showcase of academic achievement, professional
+            certifications, teaching experience, cybersecurity expertise,
+            and practical digital skills.
+          </p>
+
+        </div>
+
+        <div class="hero-card">
+
+          <strong>PhD</strong>
+
+          <span>
+            Cybersecurity & Cyber Threat Intelligence
+          </span>
+
+          <br>
+          <br>
+
+          <strong>AFHEA · MBCS</strong>
+
+          <span>
+            Professional recognition & membership
+          </span>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <main class="container">
+
+      <!-- =========================
+           EDUCATION
+      ========================== -->
+
+      <section class="section">
+
+        <div class="section-head">
+
+          <div>
+
+            <h2>
+              Education & Diplomas
+            </h2>
+
+            <p class="section-intro">
+              Academic qualifications demonstrating advanced research
+              and professional capability.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="grid">
+
+          <article class="card">
+
+            <span class="tag">
+              Doctorate
+            </span>
+
+            <h3>
+              PhD in Cybersecurity
+            </h3>
+
+            <p>
+              University of Salford — research focused on cyber threat
+              intelligence sharing and sociotechnical factors across
+              the UK and Nigeria.
+            </p>
+
+            <div class="date">
+              Completed 2026
+            </div>
+
+          </article>
+
+
+          <article class="card">
+
+            <span class="tag">
+              Higher Education
+            </span>
+
+            <h3>
+              Associate Fellow of HEA (AFHEA)
+            </h3>
+
+            <p>
+              Professional recognition of teaching, learning and
+              academic practice in higher education.
+            </p>
+
+            <div class="date">
+              Professional recognition
+            </div>
+
+          </article>
+
+
+          <article class="card">
+
+            <span class="tag">
+              Professional
+            </span>
+
+            <h3>
+              MBCS
+            </h3>
+
+            <p>
+              Member of the British Computer Society, reflecting
+              professional commitment to computing and digital practice.
+            </p>
+
+            <div class="date">
+              Professional membership
+            </div>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           CERTIFICATES
+      ========================== -->
+
+      <section class="section">
+
+        <div class="section-head">
+
+          <div>
+
+            <h2>
+              Certificates & Recognition
+            </h2>
+
+            <p class="section-intro">
+              Selected credentials, awards and continuing professional
+              development.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="grid">
+
+          <article class="card">
+
+            <span class="tag">
+              Cybersecurity
+            </span>
+
+            <h3>
+              Cyber Threat Intelligence
+            </h3>
+
+            <p>
+              Specialist knowledge spanning CTI collection, analysis,
+              sharing, trust, organisational capability and
+              threat-informed decision-making.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <span class="tag">
+              Teaching
+            </span>
+
+            <h3>
+              Higher Education Practice
+            </h3>
+
+            <p>
+              Experience designing and delivering practical learning
+              activities, assessment, supervision and academic support.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <span class="tag">
+              Recognition
+            </span>
+
+            <h3>
+              Research & Conference Awards
+            </h3>
+
+            <p>
+              Research outputs in CTI sharing, including recognised
+              conference work and best-paper-category achievement.
+            </p>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           WORK EXPERIENCE
+      ========================== -->
+
+      <section class="section">
+
+        <div class="section-head">
+
+          <div>
+
+            <h2>
+              Work Experience
+            </h2>
+
+            <p class="section-intro">
+              Teaching, research, project and cybersecurity-related
+              professional experience.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="timeline">
+
+          <article class="job">
+
+            <h3>
+              University of Salford — Cybersecurity / Computing Lecturer
+            </h3>
+
+            <div class="meta">
+              Higher education · Teaching · Supervision
+            </div>
+
+            <ul>
+
+              <li>
+                Deliver teaching across MSc and final-year undergraduate
+                computing and cybersecurity programmes.
+              </li>
+
+              <li>
+                Teach Cyber Threat Intelligence, Cyber Forensics,
+                Business Data Insight & Analytics and Software
+                Dependable Engineering.
+              </li>
+
+              <li>
+                Supervise and assess MSc projects covering phishing
+                detection, machine learning, SDN/P4 security and
+                network monitoring.
+              </li>
+
+            </ul>
+
+          </article>
+
+
+          <article class="job">
+
+            <h3>
+              HackCamp — Project Assistant / Project Manager
+            </h3>
+
+            <div class="meta">
+              Student projects · Digital skills · Project delivery
+            </div>
+
+            <ul>
+
+              <li>
+                Support practical second-year Computer Science and
+                Software Engineering project-based learning.
+              </li>
+
+              <li>
+                Coordinate activities, provide technical guidance and
+                help students translate ideas into working digital
+                solutions.
+              </li>
+
+            </ul>
+
+          </article>
+
+
+          <article class="job">
+
+            <h3>
+              Cyber Threat Intelligence Researcher
+            </h3>
+
+            <div class="meta">
+              Research · UK–Nigeria comparative studies
+            </div>
+
+            <ul>
+
+              <li>
+                Conduct qualitative research into factors that
+                encourage or inhibit CTI sharing.
+              </li>
+
+              <li>
+                Apply sociotechnical perspectives to trust,
+                organisational capability, technology, governance
+                and collaboration.
+              </li>
+
+              <li>
+                Produce research outputs for academic conferences
+                and journals.
+              </li>
+
+            </ul>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           CORE SKILLS
+      ========================== -->
+
+      <section class="section">
+
+        <div class="section-head">
+
+          <div>
+
+            <h2>
+              Core Skills
+            </h2>
+
+            <p class="section-intro">
+              A practical mix of cybersecurity, research, teaching
+              and digital delivery skills.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="skills">
+
+          <div class="skill">
+            Cyber Threat Intelligence
+          </div>
+
+          <div class="skill">
+            Cybersecurity Research
+          </div>
+
+          <div class="skill">
+            OSINT
+          </div>
+
+          <div class="skill">
+            Maltego
+          </div>
+
+          <div class="skill">
+            Network Security
+          </div>
+
+          <div class="skill">
+            Cyber Forensics
+          </div>
+
+          <div class="skill">
+            Qualitative Research
+          </div>
+
+          <div class="skill">
+            Data Analysis
+          </div>
+
+          <div class="skill">
+            Academic Teaching
+          </div>
+
+          <div class="skill">
+            Project Supervision
+          </div>
+
+          <div class="skill">
+            Digital Transformation
+          </div>
+
+          <div class="skill">
+            GitHub & Version Control
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+      Professional Skills Portfolio
+      · Academic
+      · Cybersecurity
+      · Research
+      · Digital Practice
+
+    </footer>
+
+  </div>
+
+</body>
+</html>

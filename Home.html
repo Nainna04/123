@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional Summary</title>
+    <style>
+      :root {
+        --bg: #0b1220;
+        --panel: #121d2f;
+        --panel-soft: #1a2942;
+        --primary: #7dd3fc;
+        --primary-strong: #38bdf8;
+        --text: #e5eefb;
+        --muted: #b7c4d9;
+        --accent: #a78bfa;
+        --line: rgba(255, 255, 255, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #09131d, #0f1d2d 55%, #111827);
+        color: var(--text);
+      }
+
+      .page {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 48px 20px;
+      }
+
+      .container {
+        width: min(1100px, 100%);
+        background: rgba(18, 29, 47, 0.85);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 24px 60px rgba(15, 23, 42, 0.55);
+        backdrop-filter: blur(8px);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: center;
+      }
+
+      .content {
+        padding: 72px 64px;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        padding: 8px 14px;
+        border: 1px solid rgba(125, 211, 252, 0.4);
+        border-radius: 999px;
+        background: rgba(56, 189, 248, 0.08);
+        color: var(--primary);
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      h1 {
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        line-height: 1.05;
+        margin: 22px 0 18px;
+        letter-spacing: -0.05em;
+      }
+
+      h1 .accent {
+        color: var(--primary);
+      }
+
+      .lead {
+        max-width: 620px;
+        font-size: 1.08rem;
+        line-height: 1.7;
+        color: var(--muted);
+      }
+
+      .actions {
+        display: flex;
+        gap: 16px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+      }
+
+      .button {
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 22px;
+        border-radius: 999px;
+        font-weight: 700;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+      }
+
+      .button.primary {
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        color: #07111d;
+        box-shadow: 0 12px 24px rgba(125, 211, 252, 0.25);
+      }
+
+      .button.secondary {
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--line);
+      }
+
+      .profile-card {
+        position: relative;
+        min-height: 100%;
+        background: linear-gradient(180deg, rgba(18, 29, 47, 0.88), rgba(26, 41, 66, 0.92));
+        padding: 36px 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-left: 1px solid var(--line);
+      }
+
+      .avatar {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        margin: 0 auto 24px;
+        background: linear-gradient(135deg, rgba(125, 211, 252, 0.2), rgba(167, 139, 250, 0.2));
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        font-size: 4rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      .mini-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .mini-card {
+        background: rgba(255, 255, 255, 0.025);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 18px 12px;
+        text-align: center;
+      }
+
+      .mini-card strong {
+        display: block;
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+      }
+
+      .mini-card span {
+        color: var(--muted);
+        font-size: 0.8rem;
+      }
+
+      @media (max-width: 840px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .content {
+          padding: 48px 24px 24px;
+        }
+
+        .profile-card {
+          border-left: none;
+          border-top: 1px solid var(--line);
+          padding: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="container" aria-label="Professional homepage">
+        <div class="hero">
+          <div class="content">
+            <div class="eyebrow">Professional Summary</div>
+            <h1>
+              I build <span class="accent">thoughtful</span> solutions for real-world challenges.
+            </h1>
+            <p class="lead">
+              I’m a motivated professional with a background in project execution, business strategy,
+              and digital problem-solving. Over the years, I’ve worked across fast-paced teams to turn
+              ideas into practical outcomes, combining clear communication, analytical thinking, and a
+              strong focus on user needs.
+            </p>
+            <p class="lead">
+              My interests include technology, continuous learning, and creating work that has a clear,
+              measurable impact. I’m especially drawn to opportunities where strategy, creativity, and
+              execution come together to build solutions that improve everyday experiences.
+            </p>
+            <div class="actions">
+              <a class="button primary" href="#about">Learn more</a>
+              <a class="button secondary" href="#goals">View goals</a>
+            </div>
+          </div>
+
+          <aside class="profile-card" id="about">
+            <div class="avatar" aria-label="Profile initial">S</div>
+            <div class="mini-grid" id="goals">
+              <div class="mini-card">
+                <strong>Career</strong>
+                <span>Strategy & delivery</span>
+              </div>
+              <div class="mini-card">
+                <strong>Interests</strong>
+                <span>Technology & growth</span>
+              </div>
+              <div class="mini-card">
+                <strong>Goals</strong>
+                <span>Meaningful impact</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

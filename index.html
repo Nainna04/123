@@ -275,5 +275,22 @@
         </div>
       </section>
     </main>
+
+    <script>
+  // Display a welcome message
+  document.querySelector(".button.primary").addEventListener("click", function (event) {
+    event.preventDefault();
+    alert("Welcome to my professional homepage!");
+  });
+
+  // Respond when a visitor selects a date
+  document
+    .getElementById("preferred-date")
+    .addEventListener("change", function () {
+      if (this.value) {
+        alert("Your selected appointment date is " + this.value);
+      }
+    });
+</script>
   </body>
 </html>

@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JavaScript</title>
+</head>
+<body>
+  <h1>JavaScript Page</h1>
+
+  <button onclick="showMessage()">
+    Click Me
+  </button>
+
+  <p id="message"></p>
+
+  <script>
+    function showMessage() {
+      document.getElementById("message").textContent =
+        "JavaScript is working.";
+    }
+  </script>
+
+  
+<label for="age">Enter your age:</label>
+<input id="age" type="number">
+
+<button onclick="checkAge()">Check</button>
+
+<p id="answer"></p>
+
+<script>
+  function checkAge() {
+    const age = Number(document.getElementById("age").value);
+
+    if (age >= 18) {
+      document.getElementById("answer").textContent =
+        "You are an adult.";
+    } else {
+      document.getElementById("answer").textContent =
+        "You are under 18.";
+    }
+  }
+</script>
+
+</body>
+</html>

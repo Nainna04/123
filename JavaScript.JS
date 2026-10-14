@@ -20,15 +20,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-
-  // Contact link
-  const contactLink = document.querySelector(
-    ".actions a[href='Contact.html']"
-  );
-
-  if (contactLink) {
-    contactLink.addEventListener("click", () => {
-      console.log("Opening the Contact page");
-    });
-  }
 });

@@ -8,6 +8,58 @@
   <h1>JavaScript Page</h1>
 
   
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Onclick Example</title>
+</head>
+<body>
+    <h1>My First JavaScript Event</h1>
+
+    <button onclick="showMessage()">Click Me</button>
+
+    <p id="result"></p>
+
+    <script>
+        function showMessage() {
+            document.getElementById("result").textContent =
+                "Hello! You clicked the button.";
+        }
+    </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Onchange Example</title>
+</head>
+<body>
+    <h1>Onchange Event</h1>
+
+    <label for="username">Enter your name:</label>
+
+    <input
+        type="text"
+        id="username"
+        onchange="showName()"
+    >
+
+    <p id="result"></p>
+
+    <script>
+        function showName() {
+            let name = document.getElementById("username").value;
+
+            document.getElementById("result").textContent =
+                "Hello, " + name + "!";
+        }
+    </script>
+</body>
+</html>
+
+
 
   
 <label for="age">Enter your age:</label>
